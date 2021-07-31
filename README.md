@@ -12,3 +12,6 @@ This repository contains sample programs used to create and manage articles in *
 ### Programs:
 * **cr2bhl.py**
 >A python 3 program that gathers article metadata from **Crossref** for the specified **ISSN** and **date range** and writes it to a tsv file. It formats the metadata in a way that allows definition of articles in BHL using the **Import Segments** function. Optionally, this program will match Crossref articles with existing BHL articles.
+
+* **toc_plmd.py**
+>This code illustrates an approach in which article metadata is obtained from a combination of an OCRed table of contents and BHL page level metadata. In order for this approach to work, the BHL page level metadata must be complete and correct.
