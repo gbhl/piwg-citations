@@ -10,6 +10,10 @@ This repository contains sample programs used to create and manage articles in *
 
 
 ### Programs:
+
+* **BioStorID.py**
+>A python 3 program that builds a tsv file containing BHL part ids in the first column and the corresponding BioStor identifiers in the second column. All parts for the specified BHL title id are processed. Users may load the tsv file into  a new tab in a Google Sheets spreadsheet and then use VLOOKUP to copy BioStor IDs into a different tab in the spreadsheet.
+
 * **cr2bhl.py**
 >A python 3 program that gathers article metadata from **Crossref** for the specified **ISSN** and **date range** and writes it to a tsv file. It formats the metadata in a way that allows definition of articles in BHL using the **Import Segments** function. Optionally, this program will match Crossref articles with existing BHL articles.
 
