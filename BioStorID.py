@@ -1,7 +1,7 @@
 #
 # This program pulls all BHL part ids and the corresponding BioStor ids from BHL.  It formats this information as a tsv file with two
 #  columns.  The file will be uploaded to a tab in Google Sheets and then the vlookup function will be used to add BioStor ids
-#  to another tab within the same spreadsheet.
+#  to another tab within the same spreadsheet. This code could be easily modified to return another identifier, e.g. TL-2 numbers.
 #
 #  The user is prompted to enter the BHL title id.
 #  Sample function call in Google Sheets
@@ -81,11 +81,10 @@ for item in resp['Result'][0]['Items']:                       # Process each ite
         mydata8 = uh.read().decode('utf-8')
         resp8 = json.loads(mydata8)
         partID = resp8['Result'][0]['PartID']
+        BioStorID=''
         for identifier in resp8['Result'][0]['Identifiers']:  # Check each identifier looking for the BioStor identifier
             if identifier['IdentifierName'] =='BioStor':
                 BioStorID=identifier['IdentifierValue']
-            else:
-                BioStorID=''
         print(partID)
         tsvfile.writerow((partID,BioStorID))
 
